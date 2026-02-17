@@ -71,7 +71,7 @@ unity3d_exports/
 
 ```bash
 pip install -r requirements.txt
-
+```
 ---
 
 # ⚙ 系統需求
@@ -282,5 +282,6 @@ runtimes/
 ---
 
 ⚠ 免責聲明
+
 
 本工具僅供學術研究與資料分析用途，禁止任何商業使用。

@@ -1,7 +1,7 @@
 {
   "work_dir": ".\\! wcat\\index_work",
   "cardtxt_dir": ".\\! wcat\\index_work\\card_txt",
-  "id": "20413550",
+  "id": "",
   "include_voice": true,
   "voice_count": 55,
   "include_prefab": true,

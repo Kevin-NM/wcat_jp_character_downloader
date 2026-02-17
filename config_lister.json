@@ -1,0 +1,9 @@
+{
+  "work_dir": ".\\! wcat\\index_work",
+  "cardtxt_dir": ".\\! wcat\\index_work\\card_txt",
+  "id": "20413550",
+  "include_voice": true,
+  "voice_count": 55,
+  "include_prefab": true,
+  "force_4_cards": true
+}

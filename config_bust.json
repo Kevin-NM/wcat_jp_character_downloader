@@ -1,0 +1,26 @@
+{
+  "configured": true,
+  "base_url": "https://img.wcat.colopl.jp/assets/2020/a/",
+  "now_card_json": ".\\! wcat\\index_work\\index_store\\now_Card.json",
+  "new_ids_txt": ".\\! wcat\\index_work\\index_store\\new_Card_character_ids.txt",
+  "card_txt_out": ".\\! wcat\\index_work\\card_txt\\card.txt",
+  "bust_gallery_dir": ".\\! wcat\\index_work\\bust_gallery",
+  "bust_work_dir": ".\\! wcat\\index_work\\bust_work",
+  "assetstudio_cli": ".\\AssetStudio\\AssetStudio.CLI.exe",
+  "assetstudio_game": "Normal",
+  "timeout_sec": 30,
+  "retries": 3,
+  "skip_existing_download": true,
+  "work_dir": ".\\! wcat\\index_work",
+  "gallery_dir": ".\\! wcat\\index_work\\bust_gallery",
+  "assetstudio_export_type": "Convert",
+  "assetstudio_types": [
+    "Texture2D",
+    "Sprite:Both"
+  ],
+  "assetstudio_extra_args": [
+    "--silent"
+  ],
+  "bust_key_regex": "^Card_1_bust_card_(\\d{8})_1_png$",
+  "build_html": true
+}

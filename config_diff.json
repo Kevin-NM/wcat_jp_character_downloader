@@ -1,0 +1,14 @@
+{
+  "base_url": "https://img.wcat.colopl.jp/assets/2020/a/",
+  "index_type": "Card",
+  "work_dir": ".\\! wcat\\index_work",
+  "timeout_sec": 30,
+  "retries": 3,
+  "skip_existing_download": true,
+  "assetstudio_cli": ".\\AssetStudio\\AssetStudio.CLI.exe",
+  "assetstudio_game": "Normal",
+  "assetstudio_export_type": "Raw",
+  "assetstudio_types": "TextAsset",
+  "assetstudio_extra_args": "--silent",
+  "interactive_setup": false
+}

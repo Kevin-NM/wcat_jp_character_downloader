@@ -1,0 +1,11 @@
+{
+  "base_url": "https://img.wcat.colopl.jp/assets/2020/a/",
+  "download_dir": ".\\! wcat\\rig_cache",
+  "export_dir": ".\\! wcat\\unity3d_exports",
+  "character_index": ".\\! wcat\\index_work\\_Version_a_Character_txt.unity3d",
+  "action_index": ".\\! wcat\\index_work\\_Version_a_Action_txt.unity3d",
+  "default_anims": "00000000-00000019",
+  "sample_fps": 30,
+  "timeout_sec": 30,
+  "retries": 3
+}

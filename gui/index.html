@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>白貓工具箱</title>
+<link rel="stylesheet" href="/gui/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<header class="top">
+  <h1>白貓工具箱</h1>
+  <nav id="tabs">
+    <button data-tab="chars" class="on">角色</button>
+    <button data-tab="flow">流程</button>
+    <button data-tab="jobs">工作 <span id="jobBadge" class="badge" hidden></span></button>
+    <button data-tab="config">設定</button>
+  </nav>
+</header>
+
+<main>
+  <!-- 角色 -->
+  <section id="tab-chars" class="tab on">
+    <div class="chars-layout">
+      <div class="chars-list">
+        <div class="toolbar">
+          <input id="q" type="search" placeholder="搜尋 ID（可打部分數字）" autocomplete="off">
+          <div id="filters" class="chips">
+            <button data-f="all" class="on">全部</button>
+            <button data-f="new">新角色</button>
+            <button data-f="prefab">有模型</button>
+            <button data-f="local">已下載</button>
+            <button data-f="rig">有 GLB</button>
+          </div>
+          <span id="count" class="muted"></span>
+        </div>
+        <div id="facets" class="facets"></div>
+        <div id="grid" class="grid"></div>
+        <div id="more" class="more"></div>
+      </div>
+      <aside id="detail" class="detail">
+        <p class="muted center">點左邊的角色看詳細資料</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 流程 -->
+  <section id="tab-flow" class="tab">
+    <div id="statusBox" class="status-box"></div>
+    <div class="flow">
+      <article class="step">
+        <h3>① 更新 Card 索引、比對新角色</h3>
+        <p>下載最新 Card 索引，跟上次比對，產生新角色 ID 清單。</p>
+        <button data-run="index_diff">執行</button>
+      </article>
+      <article class="step">
+        <h3>② 下載 bust 圖庫</h3>
+        <p>把所有角色半身圖抓下來（已存在的會跳過），角色頁的縮圖就是這個。</p>
+        <button data-run="bust_gallery">執行</button>
+      </article>
+      <article class="step">
+        <h3>③ + ④ 下載角色素材</h3>
+        <p>產生 card.txt 後下載並解包圖片、語音、OBJ。④ 每次會先清空 unity3d_downloads。</p>
+        <input id="flowIds" placeholder="角色 ID，空白分隔">
+        <div class="row">
+          <button data-run="card_txt" data-ids="flowIds">只產生 card.txt</button>
+          <button data-run="unpack">只跑 ④ 下載解包</button>
+          <button data-run="char_all" data-ids="flowIds" data-norig="1">③ → ④</button>
+        </div>
+        <button data-run="new_chars" class="ghost">對 ① 找到的新角色跑 ③ → ④</button>
+      </article>
+      <article class="step">
+        <h3>⑤ 骨架 + 動作 GLB</h3>
+        <p>用 UnityPy 讀 prefab 與共用動作，輸出可在 Blender / Unity 開的 GLB。</p>
+        <input id="rigIds" placeholder="角色 ID，空白分隔">
+        <div class="row">
+          <button data-run="rig" data-ids="rigIds">匯出 GLB</button>
+          <button data-run="rig_update_index" class="ghost">更新 Character / Action 索引</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 工作 -->
+  <section id="tab-jobs" class="tab">
+    <div class="jobs-layout">
+      <ul id="jobList" class="job-list"></ul>
+      <div class="job-view">
+        <div class="job-head"><b id="jobTitle">還沒有工作</b><span id="jobStatus"></span>
+          <button id="jobCancel" class="ghost" hidden>取消</button></div>
+        <pre id="jobLog" class="log"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 設定 -->
+  <section id="tab-config" class="tab">
+    <div class="config">
+      <div class="row">
+        <select id="cfgName"></select>
+        <button id="cfgSave">儲存</button>
+        <span id="cfgMsg" class="muted"></span>
+      </div>
+      <textarea id="cfgText" spellcheck="false"></textarea>
+      <p class="muted">相對路徑都以 D:\! wact 為基準。存檔前會檢查 JSON 格式。</p>
+    </div>
+  </section>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+<script type="module" src="/gui/app.js"></script>
+</body>
+</html>

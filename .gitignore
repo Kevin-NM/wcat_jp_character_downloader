@@ -1,7 +1,6 @@
 # 下載 / 解包出來的素材與第三方工具，不放進 repo
 /! wcat/
 /AssetStudio/
-/gui/icons/
 /work_report/
 __pycache__/
 *.pyc

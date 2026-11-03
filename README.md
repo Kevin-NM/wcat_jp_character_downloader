@@ -296,7 +296,7 @@ runtimes/
 * 第四位：版本（目前有 0、1）
 * 最後一位：神解（0 = 一般、1 = 神解，另有 13 隻是 2）
 
-各位數的名稱寫在 `config_id_labels.json`，Web GUI 的篩選按鈕會照這裡顯示；職業圖示放在 `gui/icons/job_XX.png`（repo 不附圖示，沒有圖示就只顯示文字）。
+各位數的名稱寫在 `config_id_labels.json`，Web GUI 的篩選按鈕會照這裡顯示；職業圖示放在 `gui/icons/job_XX.png`（11、12 沒有圖示，只顯示文字）。
 
 ---
 
